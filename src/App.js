@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,33 +6,64 @@ class App extends Component {
     return (
       <div className="App">
 
-        <header>
-          <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a className="navbar-brand" href="#">J&S McGrath</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarCollapse">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" href="#">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
+        <header style={{ position: 'fixed', width: '100%', background: '#000' }}>
+          <div className='content-wrap'>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <div>
+                <a className="nav-link" href="#">McGraths</a>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <div className="nav-link">
+                  <a href="#">Get a quote</a>
+                </div>
+                <div className="nav-link">
+                  <a href="#">Why us?</a>
+                </div>
+                <div className="nav-link">
+                  <a href="#">Testimonials</a>
+                </div>
+                <div className="nav-link">
+                  <a href="#">Contact Us</a>
+                </div>
+              </div>
             </div>
-          </nav>
+          </div>
         </header>
 
-        <main role="main" className="container-fluid" style={{ paddingTop: '57px' }}>
-          <h1 className="mt-5">J&S McGraths Ltd.</h1>
-          <p className="lead">Loreum Ipsum</p>
+        <main role="main" style={{ paddingTop: '57px' }}>
+
+          <div className='page-section'>
+            <div className='content-wrap'>
+              <h1 className="mt-5">J&S McGraths Ltd.</h1>
+            </div>
+          </div>
+
+          <div className='page-section'>
+            <div className='content-wrap'>
+              <h1 className="mt-5">Why us?</h1>
+            </div>
+          </div>
+
+          <div className='page-section'>
+            <div className='content-wrap'>
+              <h1 className="mt-5">Testimonials</h1>
+              <p className="lead">Dunnes Stores</p>
+            </div>
+          </div>
+
+          <div className='page-section'>
+            <div className='content-wrap'>
+              <h1 className="mt-5">Contact Us</h1>
+            </div>
+          </div>
+
         </main>
 
         <footer className="footer">
           <div className="container-fluid">
-            <span className="text-muted">J&S McGrath</span>
+            <div className='content-wrap'>
+              <span className="text-muted">J&S McGrath</span>
+            </div>
           </div>
         </footer>
 

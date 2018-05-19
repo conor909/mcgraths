@@ -22,6 +22,10 @@
   -------------------------------------------------- */
   /* Not required for template or sticky footer method. */
 
+  body {
+    font-family: 'Titillium Web', sans-serif !important;
+  }
+
   body > .container {
     padding: 60px 15px 0;
   }
@@ -31,6 +35,18 @@
     padding-left: 15px;
   }
 
-  code {
-    font-size: 80%;
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 50px
+  }
+
+  .content-wrap {
+    margin: 0 auto;
+    max-width: 1200px
+  }
+
+  .page-section {
+    border-bottom: 1px solid #eee;
+    height: 500px
   }
