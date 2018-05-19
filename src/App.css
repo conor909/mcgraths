@@ -24,6 +24,7 @@
 
   body {
     font-family: 'Titillium Web', sans-serif !important;
+    color: #4d5863;
   }
 
   body > .container {
@@ -38,7 +39,8 @@
   .nav-link {
     display: flex;
     align-items: center;
-    height: 50px
+    height: 50px;
+    cursor: pointer;
   }
 
   .content-wrap {
