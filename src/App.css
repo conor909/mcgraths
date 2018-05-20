@@ -7,15 +7,7 @@
     /* Margin bottom by footer height */
     margin-bottom: 60px;
   }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-  }
+
 
 
   /* Custom page CSS
@@ -36,11 +28,27 @@
     padding-left: 15px;
   }
 
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+  }
+
   .nav-link {
     display: flex;
     align-items: center;
     height: 50px;
     cursor: pointer;
+    color: #0098d1;
+  }
+
+  .logo {
+    color: #01149b;
+    font-family: 'Merriweather', serif;
   }
 
   .large-menu {
@@ -53,9 +61,10 @@
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 1em;
+    height: 100%;
   }
 
   .page-section {
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     height: 500px
   }
