@@ -6,30 +6,72 @@ import dunnes from './dunnes.png';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0, showMenu: true };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    if (window.innerWidth < 700) {
+      this.setState({ smallScreen: true });
+    } else {
+      this.setState({ smallScreen: false, showMenu: true });
+    }
+  }
+
+  onNavClick(componentRef) {
+    scrollToComponent(componentRef);
+    if (this.state.smallScreen) {
+        this.setState({ showMenu: false });
+    }
+  }
+
   render() {
+    const { smallScreen, showMenu } = this.state;
     return (
       <div className="App">
-
         <header style={{ position: 'fixed', width: '100%', background: '#f5f5f5' }}>
           <div className='content-wrap'>
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-              <div className="nav-link" onClick={ () => scrollToComponent(this.home) }>
-                <a>J<span style={{ fontSize: '.5em' }}>&</span>S McGrath Transport</a>
+            <div style={{ display: 'flex', flexDirection: smallScreen ? 'column' : 'row', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <div className="nav-link" onClick={ () => this.onNavClick(this.home) }>
+                  <a>J<span style={{ fontSize: '.5em' }}>&</span>S McGrath Transport</a>
+                </div>
+                {
+                  smallScreen &&
+                    <div className="nav-link" onClick={ () => this.setState({ showMenu: !this.state.showMenu }) }>
+                      X
+                    </div>
+                }
               </div>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div className="nav-link" onClick={ () => scrollToComponent(this.services) }>
-                  <a>Services</a>
-                </div>
-                <div className="nav-link" onClick={ () => scrollToComponent(this.why) }>
-                  <a>Why us?</a>
-                </div>
-                <div className="nav-link" onClick={ () => scrollToComponent(this.testimonials) }>
-                  <a>Testimonials</a>
-                </div>
-                <div className="nav-link" onClick={ () => scrollToComponent(this.contact) }>
-                  <a>Contact Us</a>
-                </div>
-              </div>
+              {
+                showMenu &&
+                  <div style={{ display: 'flex', flexDirection: smallScreen ? 'column' : 'row' }}>
+                    <div className="nav-link" onClick={ () => this.onNavClick(this.services) }>
+                      <a>Services</a>
+                    </div>
+                    <div className="nav-link" onClick={ () => this.onNavClick(this.why) }>
+                      <a>Why us?</a>
+                    </div>
+                    <div className="nav-link" onClick={ () => this.onNavClick(this.testimonials) }>
+                      <a>Testimonials</a>
+                    </div>
+                    <div className="nav-link" onClick={ () => this.onNavClick(this.contact) }>
+                      <a>Contact Us</a>
+                    </div>
+                  </div>
+              }
             </div>
           </div>
         </header>
