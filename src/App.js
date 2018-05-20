@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PageSection } from './components';
 import scrollToComponent from 'react-scroll-to-component';
+import FA from 'react-fontawesome';
 
 import dunnes from './dunnes.png';
 import './App.css';
@@ -51,7 +52,7 @@ class App extends Component {
                 {
                   smallScreen &&
                     <div className="nav-link" onClick={ () => this.setState({ showMenu: !this.state.showMenu }) }>
-                      X
+                      { this.state.showMenu ? <FA name="times" /> : <FA name="bars" /> }
                     </div>
                 }
               </div>
