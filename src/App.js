@@ -10,7 +10,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0, showMenu: true };
+    this.state = { width: 0, height: 0, showMenu: false };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
