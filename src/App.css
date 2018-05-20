@@ -43,12 +43,13 @@
     align-items: center;
     height: 50px;
     cursor: pointer;
-    color: #0098d1;
+    color: #0d6a8d;
   }
 
   .logo {
     color: #01149b;
     font-family: 'Merriweather', serif;
+    padding-left: 0
   }
 
   .large-menu {
