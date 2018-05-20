@@ -43,9 +43,18 @@
     cursor: pointer;
   }
 
+  .nav-link:first-child {
+    padding-left: 0;
+  }
+
+  .nav-link:last-child {
+    padding-right: 0;
+  }
+
   .content-wrap {
     margin: 0 auto;
-    max-width: 1200px
+    max-width: 1200px;
+    padding: 0 1em;
   }
 
   .page-section {

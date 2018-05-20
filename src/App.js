@@ -51,7 +51,7 @@ class App extends Component {
           <PageSection ref={(section) => { this.why = section }}>
 
             <h1 className="mt-5">Why us?</h1>
-            <p>McGraths Transport was established in 1950 by John McGrath and son Sean McGrath.  Still based in Finglas Bridge today, as a family run business we understand the importance of providing a quality service that not only keeps the customer satisfied but excels their expectations.</p>
+            <p>McGraths Transport was established in ... by John McGrath and son Sean McGrath ...  Still based in Finglas Bridge today ... as a family run business we understand the importance of providing a quality service that not only keeps the customer satisfied but excels their expectations.</p>
             <p>We have proudly served Irelands biggest retailer, Dunnes Stores for over 30 years, with a clean sheet of zero claims.</p>
 
           </PageSection>
@@ -66,6 +66,19 @@ class App extends Component {
           <PageSection ref={(section) => { this.contact = section }}>
 
               <h1 className="mt-5">Contact Us</h1>
+
+              <form>
+                <label for='name'>Name</label>
+                <input className="form-control form-control-sm" type="text" placeholder="" id='name' />
+
+                <label for='email'>Email</label>
+                <input className="form-control form-control-sm" type="text" placeholder="" id='email' />
+
+                <label for='message'>Message</label>
+                <textarea className="form-control" id="message" rows="3"></textarea>
+
+                <button type="button" class="btn btn-light">Send</button>
+              </form>
 
           </PageSection>
 
